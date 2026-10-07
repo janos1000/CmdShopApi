@@ -1,0 +1,6 @@
+@CmdShopApi_HostAddress = http://localhost:5238
+
+GET {{CmdShopApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
