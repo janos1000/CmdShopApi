@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CmdShopApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bfff2f841e93534c10fc949f1b0b3547907ece8b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CmdShopApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CmdShopApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
