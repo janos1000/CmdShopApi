@@ -1,5 +1,5 @@
-﻿using CmdShopApi.DTOs;
-using CmdShopApi.Models;
+﻿using CmdShopApi.Models;
+using CmdShopApi.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

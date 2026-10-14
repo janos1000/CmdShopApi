@@ -1,4 +1,4 @@
-﻿namespace CmdShopApi.DTOs
+﻿namespace CmdShopApi.Models.DTOs
 {
     public class AddNewOsystemDto
     {

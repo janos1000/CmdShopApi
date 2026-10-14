@@ -1,1 +1,65 @@
-[]
+[
+  {
+    "ContainingType": "CmdShopApi.Controllers.OsystemController",
+    "Method": "AddNewOsystem",
+    "RelativePath": "osystem",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addNewOsystemDto",
+        "Type": "CmdShopApi.Models.DTOs.AddNewOsystemDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CmdShopApi.Controllers.OsystemController",
+    "Method": "UpdateOsystem",
+    "RelativePath": "osystem",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateOsystem",
+        "Type": "CmdShopApi.Models.DTOs.UpdateOsystem",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CmdShopApi.Controllers.OsystemController",
+    "Method": "DeleteOsystem",
+    "RelativePath": "osystem",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CmdShopApi.Controllers.OsystemController",
+    "Method": "GetAllOsystem",
+    "RelativePath": "osystem/getAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
