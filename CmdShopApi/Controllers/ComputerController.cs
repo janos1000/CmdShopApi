@@ -103,5 +103,22 @@ namespace CmdShopApi.Controllers
                 return StatusCode(404, new { message = "Nincs elérhető adat", result = cmp });
             }
         }
+
+        // 3. Egy op-rendszer a hozzá tartozó gépekkel (GET api/query/os/{id}), 404, ha nincs ilyen id
+        [HttpGet("oneOsystemAndComputers")]
+        public object GetOneOsystemAndComputers([FromQuery] Guid id)
+        {
+            var osystem = context.Osystems.Include(o => o.Computers).FirstOrDefault(o => o.Id == id);
+            if (osystem != null)
+            {
+                return StatusCode(200, new { message = "Sikeres lekérdezés", result = osystem });
+            }
+            else
+            {
+                return StatusCode(404, new { message = "A megadott számú operációs rendszer nem található" });
+            }
+        }
+
+
     }
 }
