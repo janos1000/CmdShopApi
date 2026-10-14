@@ -86,21 +86,22 @@ namespace CmdShopApi.Controllers
             }
         }
 
-        //2. Kérdezze le az összes Computer-t, de kerüljön bele az is hogy milyen Op-rendszerrel kapható.
+        // 2. Kérdezze le az összes Computer-t, de kerüljön bele az is hogy milyen Op-rendszerrel kapható.
         [HttpGet("getAllWithOs")]
         public object GetAllComputersWithOs()
         {
-            var computers = context.Computers.ToList();
-            var result = computers.Select(c => new
+            var computers = context.Osystems.Include(o => o.Computers).Select(o => new { o.Name, o.Version, o.Computers });
+
+            var cmp  = context.Osystems.Join(context.Computers, o => o.Id, c => c.OsysId, (o, c) => new { o.Name, o.Version, c.Brand, c.Type});
+            if (computers != null)
             {
-                Id = c.Id,
-                Brand = c.Brand,
-                Type = c.Type,
-                Display = c.Display,
-                Memory = c.Memory,
-                OsName = c.Osys.Name,
-            });
-            return new { message = "Sikeres lekérdezés", result = result };
+
+                return StatusCode(200, new { message = "Sikeres lekérdezés", result = cmp });
+            }
+            else
+            {
+                return StatusCode(404, new { message = "Nincs elérhető adat", result = cmp });
+            }
         }
     }
 }

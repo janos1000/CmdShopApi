@@ -2,6 +2,7 @@
 using CmdShopApi.Models.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CmdShopApi.Controllers
 {
@@ -70,6 +71,21 @@ namespace CmdShopApi.Controllers
             else
             {
                 return StatusCode(404, new { message = "Sikertelen törlés"});
+            }
+        }
+
+        // 1. Kérdezze le az összes Osystem - et a hozzá tartozó számítógépekkel.
+        [HttpGet("getAllWithComputers")]
+        public object GetAllOsystemWithComputers()
+        {
+            var computers = context.Osystems.Include(o => o.Computers).ToList();
+            if(computers.Count > 0)
+            {
+
+                return StatusCode(200, new { message = "Sikeres lekérdezés", result = computers });
+            }
+            else{
+                return StatusCode(404, new { message = "Nincs elérhető adat" });
             }
         }
     }
